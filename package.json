@@ -1,0 +1,48 @@
+{
+  "name": "kb-memory-dsh",
+  "version": "0.1.0",
+  "description": "KB Memory: a persistent, file-based personal knowledge base plugin for DSH. Host tools let the agent summarize conversations into a reviewable knowledge base; a Web panel lets you browse, edit and curate it.",
+  "type": "module",
+  "license": "MIT",
+  "icon": "./icons/icon.svg",
+  "main": "./src/host.js",
+  "exports": {
+    ".": "./src/host.js",
+    "./client": "./client/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icons/icon.svg"
+  },
+  "files": [
+    "src",
+    "client",
+    "locale",
+    "icons",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": [
+        "./cordis.patch.yml"
+      ]
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "knowledge-base",
+    "memory"
+  ]
+}

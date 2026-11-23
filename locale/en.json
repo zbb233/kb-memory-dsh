@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "KB Memory",
+    "description": "A persistent, file-based personal knowledge base plugin: the agent summarizes conversations into a reviewable knowledge base that you browse, edit and curate in a Web panel."
+  }
+}

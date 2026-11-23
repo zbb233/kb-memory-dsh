@@ -1,0 +1,17 @@
+# kb-memory-dsh bundle patch —— 宿主平面的一行。
+#
+# 客户端模块扫描只扫宿主 Loader 的行，所以宿主半必须在这里作为补丁行插入，
+# 而不是放进 agent 预设（预设里的行浏览器看不见，面板长不出来）。
+#
+# 行名用包名（不是文件路径）：Loader 从组合自身的 base 解析它，即装进 profile 的那份包。
+#
+# 2026-11-14 起支持多知识库：知识库清单（id / 名称 / 根目录 / 绑定项目）完全由
+# 全局注册表 registry.json 决定，本文件不再写死 root（写 root 也不再生效）。
+# 注册表默认 ~/.dsh/kb-memory/registry.json（host.js 用 homedir() 兜底），
+# 如需覆盖可在插件 config.registryPath 指定；本补丁不再写死任何机器路径。
+# 在面板「管理」里可以新建知识库、绑定项目工作区绝对路径（一对一）；
+# 未命中绑定的会话保持静默（agent 不调用 kb_* 工具、不提及知识库）。
+
+- insert:
+    - id: kb-memory-host
+      name: 'kb-memory-dsh'
